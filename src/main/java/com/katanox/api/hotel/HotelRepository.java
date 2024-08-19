@@ -1,4 +1,4 @@
-package com.katanox.api;
+package com.katanox.api.hotel;
 
 import com.katanox.test.sql.tables.Hotels;
 import org.jooq.DSLContext;
