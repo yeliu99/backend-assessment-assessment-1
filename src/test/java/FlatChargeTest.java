@@ -1,7 +1,7 @@
-import com.katanox.api.flat_charges.FlatCharge;
-import com.katanox.api.flat_charges.FlatChargeService;
-import com.katanox.api.flat_charges.FlatChargeType;
-import com.katanox.api.flat_charges.FlatChargesRepository;
+import com.katanox.api.extra_charges.flat_charges.FlatChargeService;
+import com.katanox.api.extra_charges.flat_charges.FlatChargesRepository;
+import com.katanox.impl.flat_charges.FlatCharge;
+import com.katanox.impl.flat_charges.FlatChargeType;
 import org.junit.Test;
 
 import java.util.Collections;

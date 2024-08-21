@@ -1,5 +1,6 @@
-package com.katanox.api.flat_charges;
+package com.katanox.api.extra_charges.flat_charges;
 
+import com.katanox.impl.flat_charges.FlatCharge;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

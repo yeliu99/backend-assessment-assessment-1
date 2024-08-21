@@ -1,4 +1,4 @@
-package com.katanox.api.price;
+package com.katanox.impl.price;
 
 import com.katanox.test.sql.tables.Prices;
 import org.jooq.Record;

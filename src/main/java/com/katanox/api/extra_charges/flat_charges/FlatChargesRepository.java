@@ -1,5 +1,6 @@
-package com.katanox.api.flat_charges;
+package com.katanox.api.extra_charges.flat_charges;
 
+import com.katanox.impl.flat_charges.FlatCharge;
 import com.katanox.test.sql.tables.ExtraChargesFlat;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;

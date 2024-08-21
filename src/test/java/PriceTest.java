@@ -1,6 +1,6 @@
-import com.katanox.api.price.Price;
 import com.katanox.api.price.PriceRepository;
 import com.katanox.api.price.PriceService;
+import com.katanox.impl.price.Price;
 import org.junit.Test;
 
 import java.time.LocalDate;

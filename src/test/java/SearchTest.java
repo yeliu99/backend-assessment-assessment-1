@@ -1,10 +1,13 @@
-import com.katanox.api.flat_charges.FlatChargeService;
-import com.katanox.api.price.Price;
+import com.katanox.api.extra_charges.ExtraChargeService;
+import com.katanox.api.extra_charges.flat_charges.FlatChargeService;
+import com.katanox.api.extra_charges.percentage_charges.PercentageChargeService;
+import com.katanox.api.hotel.HotelService;
 import com.katanox.api.price.PriceService;
 import com.katanox.api.search.SearchRequest;
 import com.katanox.api.search.SearchResponse;
 import com.katanox.api.search.SearchResult;
 import com.katanox.api.search.SearchService;
+import com.katanox.impl.price.Price;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -30,7 +33,11 @@ public class SearchTest {
 
     private final PriceService priceService = mock(PriceService.class);
     private final FlatChargeService flatChargeService = mock(FlatChargeService.class);
-    private final SearchService searchService = new SearchService(priceService, flatChargeService);
+    private final PercentageChargeService percentageChargeService = mock(PercentageChargeService.class);
+    private final ExtraChargeService extraChargeService
+            = new ExtraChargeService(flatChargeService, percentageChargeService);
+    private final HotelService hotelService = mock(HotelService.class);
+    private final SearchService searchService = new SearchService(priceService, extraChargeService, hotelService);
 
     @Test
     public void shouldThrowIllegalArgumentExceptionWhenSearchDateIsNotValid() {

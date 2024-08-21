@@ -1,5 +1,6 @@
 package com.katanox.api.price;
 
+import com.katanox.impl.price.Price;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -25,4 +26,7 @@ public class PriceService {
                                 .filter(e -> e.getValue().size() == days)
                                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue))));
     }
-}
+
+    public double calculatePriceWithoutVAT(double price, double vat) {
+        return price / (1 + vat / 100);
+    }}

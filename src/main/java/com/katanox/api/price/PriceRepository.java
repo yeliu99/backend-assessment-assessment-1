@@ -1,5 +1,6 @@
 package com.katanox.api.price;
 
+import com.katanox.impl.price.Price;
 import com.katanox.test.sql.tables.Prices;
 import com.katanox.test.sql.tables.Rooms;
 import org.jooq.DSLContext;
@@ -22,6 +23,7 @@ public class PriceRepository {
                 .where(Rooms.ROOMS.HOTEL_ID.eq(hotelId))
                 .and(Prices.PRICES.QUANTITY.greaterThan(0))
                 .and(Prices.PRICES.DATE.between(checkin, checkout.minusDays(1)))
+                .orderBy(Prices.PRICES.DATE)
                 .fetch()
                 .map(Price::fromRecord);
     }

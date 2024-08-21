@@ -1,4 +1,4 @@
-package com.katanox.api.flat_charges;
+package com.katanox.impl.flat_charges;
 
 import com.katanox.test.sql.tables.ExtraChargesFlat;
 import org.jooq.Record;

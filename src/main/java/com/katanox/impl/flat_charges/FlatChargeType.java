@@ -1,4 +1,4 @@
-package com.katanox.api.flat_charges;
+package com.katanox.impl.flat_charges;
 
 public enum FlatChargeType {
     ONCE,
