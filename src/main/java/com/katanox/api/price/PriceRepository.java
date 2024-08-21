@@ -27,4 +27,12 @@ public class PriceRepository {
                 .fetch()
                 .map(Price::fromRecord);
     }
+
+    public void reduceRoomQuantitiesBetweenDates(long roomId, LocalDate checkin, LocalDate checkout) {
+        dsl.update(Prices.PRICES)
+                .set(Prices.PRICES.QUANTITY, Prices.PRICES.QUANTITY.minus(1))
+                .where(Prices.PRICES.ROOM_ID.eq(roomId))
+                .and(Prices.PRICES.DATE.between(checkin, checkout.minusDays(1)))
+                .execute();
+    }
 }

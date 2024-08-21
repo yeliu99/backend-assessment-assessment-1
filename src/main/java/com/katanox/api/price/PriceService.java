@@ -29,4 +29,9 @@ public class PriceService {
 
     public double calculatePriceWithoutVAT(double price, double vat) {
         return price / (1 + vat / 100);
-    }}
+    }
+
+    public void reduceRoomQuantity(long roomId, LocalDate checkin, LocalDate checkout) {
+        priceRepository.reduceRoomQuantitiesBetweenDates(roomId, checkin, checkout);
+    }
+}
