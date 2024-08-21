@@ -85,3 +85,11 @@ First push the initial repository to the master branch. Then develop your soluti
 create a pull request to the master branch. This way, it will be easier for us to spot all the changes you've made.
 Finally, send an invitation to the repository by email and assign us to the PR.
 If uploaded to GitHub, invite `@KatanoxDevelopers`.
+
+## How to run
+Run containers with makefile command
+```sh
+  make run
+```
+Swagger UI is available at:
+http://localhost:8080/swagger-ui/index.html

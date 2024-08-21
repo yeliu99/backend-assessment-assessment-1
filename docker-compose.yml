@@ -1,7 +1,18 @@
 
 version: '3'
 services:
-  katanox_test_db:
+  api:
+    image: api-impl:1.0
+    ports:
+        - "127.0.0.1:8080:8080"
+    links:
+        - postgres
+    environment:
+        spring_datasource_url: jdbc:postgresql://postgres:5432/katanox_test
+    networks:
+        - backend
+
+  postgres:
     image: postgres:13.5
     container_name: katanox_test_db
     environment:
@@ -14,12 +25,6 @@ services:
       - postgres:/var/lib/postgresql/data
     networks:
       - backend
-
-  rabbitmq:
-    image: rabbitmq:management
-    ports:
-      - "5672:5672"
-      - "15672:15672"
 
 volumes:
   postgres:
